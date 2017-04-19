@@ -1,0 +1,16 @@
+{
+  "name": "@times/error-collection",
+  "version": "1.0.0",
+  "description": "Allows collections of errors to be built and bubbled up through an application",
+  "main": "lib/error-collection.js",
+  "scripts": {
+    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha ./test -- --recursive"
+  },
+  "author": "Chris Hutchinson <chris.hutchinson@thetimes.co.uk>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0"
+  }
+}
