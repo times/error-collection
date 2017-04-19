@@ -6,7 +6,16 @@
   "scripts": {
     "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha ./test -- --recursive"
   },
-  "author": "Chris Hutchinson <chris.hutchinson@thetimes.co.uk>",
+  "contributors": [
+    {
+      "name": "Chris Hutchinson",
+      "email": "chris.hutchinson@thetimes.co.uk"
+    },
+    {
+      "name": "Elliot Davies",
+      "email": "elliot.davies@thetimes.co.uk"
+    }
+  ],
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
