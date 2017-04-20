@@ -1,6 +1,6 @@
 # Error Collection
 
-> Allows collections of errors to be built and bubbled up through an application
+> Allows collections of errors to be bubbled up through an application
 
 [![Build Status](https://travis-ci.org/times/error-collection.svg?branch=master)](https://travis-ci.org/times/error-collection) [![Code coverage](https://codecov.io/gh/times/error-collection/branch/master/graph/badge.svg)](https://codecov.io/gh/times/error-collection) [![npm version](https://badge.fury.io/js/%40times%2Ferror-collection.svg)](https://badge.fury.io/js/%40times%2Ferror-collection)
 
