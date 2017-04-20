@@ -2,7 +2,7 @@
   "name": "@times/error-collection",
   "version": "1.0.0",
   "description": "Allows collections of errors to be built and bubbled up through an application",
-  "main": "lib/error-collection.js",
+  "main": "index.js",
   "scripts": {
     "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha ./test -- --recursive"
   },
