@@ -7,6 +7,9 @@
 ## Usage
 
 ```js
+// Load the library
+const { ErrorCollection } = require('@times/error-collection');
+
 // Create an error with attached data
 const error = new ErrorCollection('INVALID_ID', { id });
 
@@ -18,6 +21,41 @@ error.getErrors();
 ```
 
 
+## Chai plugin
+
+There is a Chai plugin that adds `throwErrorCollection()` and `rejectedWithErrorCollection()` methods which can be used for testing.
+
+```js
+// Load the plugin
+const { errorCollectionChaiPlugin } = require('@times/error-collection');
+
+// Load chai and initialise the plugin
+const chai = require('chai');
+chai.use(errorCollectionChaiPlugin);
+const expect = chai.expect;
+
+// Write your tests
+describe('myThing', () => {
+  describe('#myMethod()', () => {
+    it('should pass a valid check', () => {
+      expect(() => {}).to.throwErrorCollection([
+        { code: 'SOME_ERROR', data: { name: 'test' } },
+      ]);
+    });
+
+
+    it('should pass a valid promise check', () => {
+      return expect(
+        myFunction()
+      ).to.be.rejectedWithErrorCollection([
+        { code: 'SOME_ERROR', data: { name: 'test' } },
+      ]);
+    });
+  });
+});
+```
+
+
 ## Contributing
 
 Pull requests are very welcome. Please include a clear description of any changes, and full test coverage.
@@ -25,8 +63,3 @@ Pull requests are very welcome. Please include a clear description of any change
 During development you can run tests with
 
     npm test
-
-
-## Contact
-
-Chris Hutchinson <chris.hutchinson@thetimes.co.uk>
