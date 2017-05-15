@@ -1,6 +1,6 @@
 {
   "name": "@times/error-collection",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Allows collections of errors to be built and bubbled up through an application",
   "main": "index.js",
   "scripts": {
