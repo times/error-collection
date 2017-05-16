@@ -81,6 +81,49 @@ describe('ErrorCollection', () => {
     });
   });
 
+  describe('#mergeWith()', () => {
+    it('should remain unchanged when no other collections are passed', () => {
+      error.addError('SECOND_ERROR', 2);
+
+      error.mergeWith();
+
+      expect(error.getErrors().length).to.equal(2);
+      expect(error.getErrors()).to.deep.equal([
+        {
+          code: 'SECOND_ERROR',
+          data: 2,
+        },
+        {
+          code: 'SAMPLE_ERROR',
+          data: null,
+        },
+      ]);
+    });
+
+    it('should merge with other collections, left to right', () => {
+      const error2 = new ErrorCollection('SECOND_ERROR', 2);
+      const error3 = new ErrorCollection('THIRD_ERROR', 3);
+
+      error.mergeWith(error2, error3);
+
+      expect(error.getErrors().length).to.equal(3);
+      expect(error.getErrors()).to.deep.equal([
+        {
+          code: 'THIRD_ERROR',
+          data: 3,
+        },
+        {
+          code: 'SECOND_ERROR',
+          data: 2,
+        },
+        {
+          code: 'SAMPLE_ERROR',
+          data: null,
+        },
+      ]);
+    });
+  });
+
   describe('#getErrors()', () => {
     it('should return a array of error objects', () => {
       const errors = error.getErrors();
